@@ -27,7 +27,7 @@ struct BadgeSymbol: View {
             CGPoint(x: middle + topWidth, y: topHeight - spacing),
             CGPoint(x: middle, y: spacing)
           ]
-          printLineCoordinates(lines: top, description: "TOP")
+          //printLineCoordinates(lines: top, description: "TOP")
           path.addLines(top)
           // Move to Bottom Shape Start
           path.move(to: CGPoint(x: middle, y: topHeight / 2 + spacing * 3))
@@ -39,7 +39,7 @@ struct BadgeSymbol: View {
             CGPoint(x: middle + topWidth, y: topHeight + spacing),
             CGPoint(x: middle, y: topHeight / 2 + spacing * 3)
           ]
-          printLineCoordinates(lines: bottom, description: "BOTTOM")
+          //printLineCoordinates(lines: bottom, description: "BOTTOM")
           path.addLines(bottom)
         }
         .fill(Self.symbolColor)
