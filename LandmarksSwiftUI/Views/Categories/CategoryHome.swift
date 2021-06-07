@@ -14,12 +14,8 @@ struct CategoryHome: View {
     var body: some View {
       NavigationView {
         List {
-          // First featured landmark
-          modelData.features[0].image
-            .resizable()
-            .scaledToFill()
-            .frame(height: 200)
-            .clipped()
+          PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
+            .aspectRatio(3 / 2, contentMode: .fit)
             .listRowInsets(EdgeInsets())
           // Sets the edge instets to zero so the content can extend to the edges of the display.
           
@@ -28,6 +24,7 @@ struct CategoryHome: View {
           }
           .listRowInsets(EdgeInsets())
         }
+        .listStyle(InsetListStyle())
         .navigationTitle("Featured")
         .toolbar {
           Button(action: { showingProfile.toggle() }) {
